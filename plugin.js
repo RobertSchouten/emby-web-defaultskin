@@ -132,7 +132,11 @@ define(['playbackManager', 'skinManager', 'userSettings', 'pluginManager', 'brow
             document.querySelector('.headerUserButton').addEventListener('click', function () {
                 self.showUserMenu();
             });
-
+            //pause
+            window.addEventListener('blur', function(){debugger;document.querySelector(".videoOsd-btnPause").click();});
+            //play
+            window.addEventListener('focus', function(){debugger;document.querySelector(".videoOsd-btnPause").click();});
+            
             events.on(connectionManager, 'localusersignedin', onLocalUserSignedIn);
             events.on(connectionManager, 'localusersignedout', onLocalUserSignedOut);
             document.addEventListener('viewbeforeshow', onViewBeforeShow);
